@@ -167,4 +167,13 @@ const Movies: Array<Movie> = [
     },
 ];
 
+export const defaultMovie = {
+  name: 'Default Movie',
+  poster:
+      'https://raw.githubusercontent.com/enahum/mattermost-react-native-interview/master/posters/Up.jpg',
+  gender: 'Animation',
+  description:
+      '78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.',
+}
+
 export default Movies;
