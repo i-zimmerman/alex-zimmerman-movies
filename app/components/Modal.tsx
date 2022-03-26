@@ -48,16 +48,19 @@ function titleCase(value: string): string {
     let title = '';
     let shouldUpcase = true;
     for (let i = 0; i < value.length; i++) {
+        let letter = value[i];
+
         if (shouldUpcase) {
-            title += value[i].toUpperCase();
+            letter = letter.toUpperCase();
             shouldUpcase = false;
         }
-        if (value[i] === ' ') {
+        if (letter === ' ') {
             shouldUpcase = true;
         }
+        title += letter;
     }
 
-    return title;
+    return title + ',';
 }
 
 const Modal = ({movie, position, close}: ModalProps) => {
@@ -117,6 +120,8 @@ const Modal = ({movie, position, close}: ModalProps) => {
         [],
     );
 
+    console.log(movie)
+
     return (
         <SwipeToClose y={translationY} opacity={opacity.value} {...{scale}}>
             <Animated.View
@@ -138,7 +143,7 @@ const Modal = ({movie, position, close}: ModalProps) => {
                                 {`${titleCase(movie.name)} `}
                             </Text>
                             <Text style={styles.paragraph}>
-                                {movie.description}
+                                {`${movie.description[0].toLowerCase()}${movie.description.substring(1)}`}
                             </Text>
                         </Text>
                     </ScrollView>

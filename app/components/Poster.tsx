@@ -13,7 +13,7 @@ const Poster = ({borderRadius, movie}: PosterProps) => {
     return (
         <>
             <Animated.Image
-                source={{uri: movie.poster}}
+                source={{uri: movie.poster }}
                 style={[styles.image, {borderRadius: borderRadius || 8}]}
             />
             <View style={styles.content}>
